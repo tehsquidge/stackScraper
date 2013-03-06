@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>stackScraper</title>
+    </head>
+    <body>
+		<h1>Stack Scraper</h1>
+        <p>Scraping content off <a href="http://stackoverflow.com">stackoverflow.com</a></p>
+        <h2>Counts</h2>
+        <p><strong>Questions tagged with PHP: </strong> {{phpCount}}</p>
+        <p><strong>Questions tagged with Python: </strong> {{pythonCount}}</p>
+        <p><strong>Questions tagged with Java: </strong> {{javaCount}}</p>
+        <p><strong>Anchor tag count: </strong> {{anchorCount}}</p>
+        <h2>Averages</h2>
+        <p><strong>total number of Votes: </strong> {{totalVotes}}</p>
+        <p><strong>total number of Questions: </strong> {{questions}}</p>
+        <p><strong>Average number of Votes: </strong> {{averageVote}}</p>
+        <p><strong>Median number of Views: </strong> {{medianViews}}</p>
+        
+        <h2>Mosted Viewed ({{mostViewed}})</h2>
+        <p><strong>title: </strong> {{mostViewedTitle}}</p>
+        <p><strong>Tags:</strong></p>
+        <ul>
+			{% for tag in mostViewedTags %}
+			<li>{{tag}}</li>
+			{% endfor %}
+        </ul>
+        <h2>Mosted Votes ({{mostVotes}})</h2>
+        <p><strong>title: </strong> {{mostVotesTitle}}</p>
+        <p><strong>Tags:</strong></p>
+        <ul>
+			{% for tag in mostVotesTags %}
+			<li>{{tag}}</li>
+			{% endfor %}
+        </ul>
+        <h2>Mosted Answers ({{mostAnswered}})</h2>
+        <p><strong>title: </strong> {{mostAnsweredTitle}}</p>
+        <p><strong>Tags:</strong></p>
+        <ul>
+			{% for tag in mostAnsweredTags %}
+			<li>{{tag}}</li>
+			{% endfor %}
+        </ul>
+        <h2>Python Tags</h2>
+        <ul>
+        {% for tag, value in pythonTags %}
+			<li>{{tag}} - {{value}}%</li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>
