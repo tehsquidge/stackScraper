@@ -48,6 +48,9 @@ def hello():
 		taggedJava = False
 		
 		for tag in q.findAll(True, {'class': re.compile(r'\bpost-tag\b')}):
+			if(tag.string == None):
+				break
+				
 			if re.match(r'(?i)\bphp\b',tag.string) != None and taggedPHP == False:
 				phpCount += 1
 				taggedPHP = True
