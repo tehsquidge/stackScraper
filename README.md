@@ -6,7 +6,7 @@ Scrapes content off of the stackoverflow.com homepage
 Usage
 =====
 
-python ./run.py
+```python ./run.py```
 
 Requirements
 ============
